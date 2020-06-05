@@ -15,3 +15,7 @@ if __name__ == "__main__":
 
     print("+{} = {}".format(vec1, +vec1))
     print("-{} = {}".format(vec1, -vec1))
+
+    zero2 = Vector.zero(2)
+    print(zero2)
+    print("{} + {} = {}".format(vec1, zero2, vec1 + zero2))
