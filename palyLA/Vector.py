@@ -1,3 +1,6 @@
+import math
+
+
 class Vector:
     def __init__(self, lst):
         self._values = list(lst)
@@ -5,6 +8,12 @@ class Vector:
     @classmethod
     def zero(cls, dim):
         return cls([0] * dim)
+
+    def norm(self):
+        return math.sqrt(sum(e**2 for e in self._values))
+
+    def normalize(self):
+        return 1 / self.norm() * Vector(self._values)
 
     def __iter__(self):
         return self._values.__iter__()
