@@ -1,3 +1,4 @@
+from ._global import EPSILON
 import math
 
 
@@ -13,6 +14,8 @@ class Vector:
         return math.sqrt(sum(e**2 for e in self._values))
 
     def normalize(self):
+        if self.norm() < EPSILON:
+            raise ZeroDivisionError("Normalize error! norm is zero")
         return 1 / self.norm() * Vector(self._values)
 
     def __iter__(self):

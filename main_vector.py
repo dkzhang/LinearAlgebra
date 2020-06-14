@@ -25,3 +25,8 @@ if __name__ == "__main__":
 
     print("normalize {} is {}".format(vec, vec.normalize()))
     print("norm({}) = {}".format(vec.normalize(), vec.normalize().norm()))
+
+    try:
+        zero2.normalize()
+    except ZeroDivisionError as e:
+        print("Cannot normalize zero vector {} : {}".format(zero2, e))
